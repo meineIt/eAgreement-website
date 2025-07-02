@@ -6,11 +6,18 @@
     <title>e-Porozumienie | Ugoda w 3 kliknięcia - Inwestycja</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+      
         body {
             font-family: 'Montserrat', sans-serif;
             scroll-behavior: smooth;
         }
+
 
         .gradient-bg {
             background: linear-gradient(135deg, #0056b3 0%, #00377a 100%);
@@ -46,10 +53,60 @@
             font-weight: 600;
         }
 
-        .highlight {
-            background: linear-gradient(transparent 50%, rgba(59, 130, 246, 0.2) 50%);
-            padding: 0 2px;
+        /* Wzór z plusikami */
+        .element-with-pattern {
+            position: relative;
+            background: linear-gradient(135deg, #0A2463 0%, #3E5C95 100%);
         }
+
+        .element-with-pattern::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.12'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 60px 60px;
+            opacity: 0.8;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+
+        .element-with-pattern > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Aktualizacja kolorystyki */
+        .gradient-bg {
+            background: linear-gradient(135deg, #0A2463 0%, #3E5C95 100%) !important;
+        }
+
+        .bg-blue-700 {
+            background: linear-gradient(135deg, #0A2463 0%, #3E5C95 100%) !important;
+        }
+
+        .bg-blue-600 {
+            background: linear-gradient(135deg, #0A2463 0%, #3E5C95 100%) !important;
+        }
+
+        .hover\:bg-blue-800:hover, .hover\:bg-blue-700:hover {
+            background: linear-gradient(135deg, #0A2463 0%, #3E5C95 100%) !important;
+            box-shadow: 0 10px 25px rgba(10, 36, 99, 0.35) !important;
+            transform: translateY(-2px) !important;
+        }
+
+        .text-blue-700, .text-blue-800 {
+            color: #0A2463 !important;
+        }
+
+        .bg-blue-50 {
+            background: linear-gradient(135deg, rgba(10, 36, 99, 0.05) 0%, rgba(62, 92, 149, 0.05) 100%) !important;
+        }
+
     </style>
 </head>
 <body class="bg-gray-50">
@@ -75,18 +132,16 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="pt-28 pb-20 gradient-bg">
+    <header class="pt-28 pb-20 element-with-pattern">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 text-white mb-10 md:mb-0">
+            <div class="w-full text-center text-white mb-10 md:mb-0">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">Ugoda w 3 kliknięcia</h1>
-<p class="text-xl mb-8">Pierwsza w Polsce platforma <strong>AI-mediacji online</strong>, która rozwiązuje spory frankowe w <strong>72h</strong> zamiast w 72 tygodnie!</p>
+<p class="text-xl mb-8">Pierwsza platforma do <strong>mediacji online</strong>, która wykorzystując AI<br>rozwiązuje spory frankowe w <strong>3 dni</strong> zamiast w 15 miesięcy!</p>
 <div>
-    <button class="bg-white text-blue-800 py-3 px-6 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
-        Prezentacja inwestorska
-    </button>
+    <button class="bg-white text-blue-800 py-3 px-6 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Odbierz zniżkę</button>
 </div>
 </div>
-<div class="md:w-1/2 flex justify-center">
+<!-- <div class="md:w-1/2 flex justify-center">
     <div class="bg-white p-6 rounded-lg shadow-xl w-full max-w-md">
         <div class="flex items-center mb-6">
             <svg class="h-10 w-10 text-blue-700" fill="currentColor" viewBox="0 0 24 24">
@@ -119,7 +174,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 </div>
 </header>
 
@@ -151,7 +206,7 @@
         <div class="bg-white p-6 rounded-lg shadow-md step-card">
             <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">1</div>
             <h3 class="text-xl font-semibold mb-3 text-gray-800">Rejestracja i weryfikacja</h3>
-            <p class="text-gray-600">Załóż konto, zweryfikuj tożsamość przez <strong>Profil Zaufany</strong> i wgraj dokumenty kredytowe, które zostaną <strong>automatycznie zweryfikowane</strong> pod kątem autentyczności.</p>
+            <p class="text-gray-600">Załóż konto, zweryfikuj tożsamość przez <strong>Profil Zaufany</strong> i wgraj dokumenty, które zostaną <strong>automatycznie zweryfikowane</strong> pod kątem autentyczności.</p>
     </div>
     <div class="bg-white p-6 rounded-lg shadow-md step-card">
         <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">2</div>
@@ -175,6 +230,18 @@
         <div class="bg-gray-50 p-6 rounded-lg">
             <h3 class="text-2xl font-semibold mb-6 text-gray-800 border-b border-gray-200 pb-2">Tradycyjny sąd</h3>
             <ul class="space-y-4">
+              <li class="flex items-start">
+                  <svg class="h-6 w-6 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586l-1.293-1.293z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700"><strong>18-36 miesięcy</strong> oczekiwania</span>
+              </li>
+              <li class="flex items-start">
+                  <svg class="h-6 w-6 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586l-1.293-1.293z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Koszt <strong>7.000-14.000 zł</strong></span>
+              </li>
                 <li class="flex items-start">
                     <svg class="h-6 w-6 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586l-1.293-1.293z" clip-rule="evenodd"></path>
@@ -191,43 +258,43 @@
                     <svg class="h-6 w-6 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586l-1.293-1.293z" clip-rule="evenodd"></path>
                     </svg>
-                    <span class="text-gray-700"><strong>18-36 miesięcy</strong> oczekiwania</span>
-                </li>
-                <li class="flex items-start">
-                    <svg class="h-6 w-6 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586l-1.293-1.293z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="text-gray-700">Koszt <strong>7.000-14.000 zł</strong></span>
+                    <span class="text-gray-700">Czasochłonny proces sądowy</span>
                 </li>
             </ul>
         </div>
         <div class="bg-blue-50 p-6 rounded-lg">
             <h3 class="text-2xl font-semibold mb-6 text-blue-800 border-b border-blue-200 pb-2">e-Porozumienie</h3>
             <ul class="space-y-4">
-                <li class="flex items-start">
-                    <svg class="h-6 w-6 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="text-gray-700">Wygoda online z <strong>AI asystentem</strong></span>
-                </li>
-                <li class="flex items-start">
-                    <svg class="h-6 w-6 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="text-gray-700">Polubowne rozwiązanie sporu</span>
-        </li>
-        <li class="flex items-start">
-            <svg class="h-6 w-6 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-            </svg>
-            <span class="text-gray-700">Nawet <strong>72 godziny</strong> do rozwiązania</span>
-        </li>
-        <li class="flex items-start">
-            <svg class="h-6 w-6 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-            </svg>
-            <span class="text-gray-700">Tylko <strong>199 zł</strong></span>
-        </li>
+              <li class="flex items-start">
+                  <svg class="h-6 w-6 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Tylko <strong>72 godziny</strong> do rozwiązania</span>
+              </li>
+              <li class="flex items-start">
+                  <svg class="h-6 w-6 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Tylko <strong>199 PLN</strong></span>
+              </li>
+              <li class="flex items-start">
+                <svg class="h-6 w-6 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Prosta i zrozumiała procedura</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="h-6 w-6 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Polubowne rozwiązanie sporu</span>
+              </li>
+              <li class="flex items-start">
+                  <svg class="h-6 w-6 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Wygoda online z <strong>AI asystentem</strong></span>
+              </li>
     </ul>
 </div>
 </div>
@@ -467,7 +534,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="bg-blue-700 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform scale-105">
+            <div class="element-with-pattern p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform scale-105">
                 <div class="text-center mb-6">
                     <h3 class="text-xl font-bold text-white mb-2">Kancelarie prawne</h3>
                     <div class="text-3xl font-bold text-white">499-1999 zł</div>
@@ -551,7 +618,7 @@
 <!-- Team Section -->
 <section id="zespol" class="py-16 bg-white">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Zespół</h2>
+    <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Founderzy</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-center">
         <div class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -561,7 +628,7 @@
         </div>
         <h3 class="text-xl font-semibold mb-1 text-gray-800">Simone Barszczak</h3>
         <p class="text-blue-700 font-medium mb-3">Prawnik nowych technologii</p>
-        <p class="text-gray-600">Ekspert w dziedzinie prawa nowych technologii z doświadczeniem w projektach <strong>LegalTech</strong>.</p>
+        <p class="text-gray-600">Ekspert w dziedzinie <strong>cyberbezpieczeństwa i blockchain</strong>.</p>
       </div>
       <div class="bg-gray-50 p-6 rounded-lg shadow-md hover: shadow-lg transition-all duration-300 text-center">
         <div class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -571,7 +638,7 @@
         </div>
         <h3 class="text-xl font-semibold mb-1 text-gray-800">Paweł Urzenitzok</h3>
         <p class="text-blue-700 font-medium mb-3">Doktorant</p>
-        <p class="text-gray-600">Badacz w dziedzinie <strong>sztucznej inteligencji</strong> i jej zastosowań w systemach prawnych.</p>
+        <p class="text-gray-600">Doktorant <strong>prawa nowych technologii</strong> badający legaltech.</p>
       </div>
       <div class="bg-gray-50 p-6 rounded-lg shadow-md hover: shadow-lg transition-all duration-300 text-center">
         <div class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -588,28 +655,26 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-16 gradient-bg">
+<section class="py-16 element-with-pattern">
   <div class="container mx-auto px-4 text-center">
     <h2 class="text-3xl font-bold mb-6 text-white">Zainwestuj w przyszłość mediacji online</h2>
     <p class="text-xl mb-8 text-blue-100 max-w-3xl mx-auto">e-Porozumienie to <strong>innowacyjne rozwiązanie</strong> z potencjałem transformacji rynku mediacji w Polsce i Europie. Nasza strategia rozwoju zakłada:</p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
       <div class="bg-white bg-opacity-10 p-4 rounded-lg">
         <h3 class="text-white font-semibold mb-2">6 miesięcy</h3>
-        <p class="text-blue-100"><strong>MVP</strong>, pilotaż, 5-10 mediacji, pierwsze partnerstwa z bankami i kancelariami</p>
+        <p class="text-blue-100"><strong>MVP</strong>, pilotaż, 50 mediacji, partnerstwa z 3 bankami i 5 kancelariami</p>
       </div>
       <div class="bg-white bg-opacity-10 p-4 rounded-lg">
         <h3 class="text-white font-semibold mb-2">12 miesięcy</h3>
-        <p class="text-blue-100"><strong>Komercjalizacja</strong>, 100 mediacji/mies., pierwsze płatne wdrożenia B2B</p>
+        <p class="text-blue-100"><strong>Komercjalizacja</strong>, 200 mediacji/mies., pierwsze płatne wdrożenia B2B</p>
       </div>
         <div class="bg-white bg-opacity-10 p-4 rounded-lg">
             <h3 class="text-white font-semibold mb-2">24 miesiące</h3>
-            <p class="text-blue-100"><strong>1000+ mediacji/mies.</strong>, ekspansja na rynki zagraniczne (CEE, UE)</p>
+            <p class="text-blue-100"><strong>2000+ mediacji/mies.</strong>, ekspansja na rynki zagraniczne (CEE, UE)</p>
         </div>
     </div>
     <div>
-        <button class="bg-white text-blue-800 py-3 px-8 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 text-lg">
-            Prezentacja inwestorska
-        </button>
+        <button class="bg-white text-blue-800 py-3 px-8 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 text-lg">Odbierz zniżkę</button>
     </div>
 </div>
 </section>
